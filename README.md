@@ -1,5 +1,37 @@
 # app-bdf2mne
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Converts EEG data in BrainVision format (.vhdr/.vmrk/.eeg) to an MNE raw .fif file with MNE-Python read_raw_brainvision.**
+
+Reads the BrainVision header with mne.io.read_raw_brainvision and saves the recording as MNE raw.fif. Use it to bring BrainVision EEG recordings into the brainlife MNE pipeline. BIDS sidecars (channels, electrodes, coordsystem, events) are mapped but not used by the code.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/eeg/brainvision` |
+| 📤 **Outputs** | `neuro/meeg/mne/raw` |
+| 🐳 **Container** | `brainlife/mne:0.23dev` |
+| ⚙️ **Resources** | 8 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.636](https://doi.org/10.25663/brainlife.app.636) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `bv1` | `neuro/eeg/brainvision` | yes | EEG recording in BrainVision format; the .vhdr header (with its .vmrk and .eeg files) is read. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `out_dir` | `neuro/meeg/mne/raw` | MNE Raw data in FIF format |
+
+📚 **References used by this App:**
+- Hayashi S, Caron BA, et al. brainlife.io: A decentralized and open source cloud platform to support neuroscience research. arXiv (2023).
+- Gramfort A, et al. MEG and EEG data analysis with MNE-Python. Front Neurosci 7:267 (2013). [doi:10.3389/fnins.2013.00267](https://doi.org/10.3389/fnins.2013.00267)
+
+<!-- brainlife-app:end -->
+
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.636-blue.svg)](https://doi.org/10.25663/brainlife.app.636)
 
